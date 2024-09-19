@@ -6,7 +6,14 @@
     public class Player : GameObject
     {
         private static readonly float START_Y_POSITION = 10;
+
+        #region Fields
         public int health;
+        #endregion Fields
+
+
+
+        #region Constructors
 
         public Player(string iD)
          : base(iD, true, 0, START_Y_POSITION, 0)
@@ -27,10 +34,12 @@
         {
             this.health = health;
         }
+    
+        #endregion Constructors
 
         public override string ToString()
         {
-            return $"Player: {ID} at ({x}, {y}, {z}) with {health} health";
+            return $"Player: {ID} at ({X}, {Y}, {Z}) with {health} health";
         }
     }
 }

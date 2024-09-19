@@ -5,9 +5,28 @@
     /// </summary>
     public class GameObject
     {
-        public string ID;
-        public bool isActive;
-        public float x, y, z;
+        #region Fields
+
+        private string id;
+        private bool isActive;
+        private float x, y, z;
+
+        #endregion Fields
+
+        public string ID
+        {
+            get => id;
+            set => id = (value == null) ? "Default ID" : value;
+        }
+
+        public bool IsActive { get => isActive; set => isActive = value; }
+        public float X { get => x; set => x = value; }
+        public float Y { get => y; set => y = value; }
+        public float Z { get => z; set => z = value; }
+
+
+
+        #region Constructors
 
         public GameObject() : this("Default", false, 0, 0, 0)
         {
@@ -16,14 +35,16 @@
         public GameObject(string iD, bool isActive,
             float x, float y, float z)
         {
-            ID = iD;
+            id = iD;
             this.isActive = isActive;
             this.x = x; this.y = y; this.z = z;
         }
 
+        #endregion Constructors
+
         public override string ToString()
         {
-            return $"GameObject: {ID} at ({x}, {y}, {z})";
+            return $"GameObject: {id} at ({x}, {y}, {z})";
         }
     }
 }
